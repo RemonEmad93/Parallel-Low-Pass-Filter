@@ -9,7 +9,7 @@ using namespace cv;
 
 int main() {
     string imagePath;
-    cout << "Enter the file path of the image: ";
+    cout << "Enter the image name: ";
     cin >> imagePath;
 
     Mat img = imread(imagePath, IMREAD_UNCHANGED);
