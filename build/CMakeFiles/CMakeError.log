@@ -1,0 +1,481 @@
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wnon-virtual-dtor’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type  -Wnon-virtual-dtor'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6776d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6776d.dir/build.make CMakeFiles/cmTC_6776d.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6776d.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type  -Wnon-virtual-dtor -o CMakeFiles/cmTC_6776d.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wnon-virtual-dtor’ is valid for C++/ObjC++ but not for C
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_6776d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6776d.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_6776d.dir/src.c.o -o cmTC_6776d 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wmissing-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fde33/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fde33.dir/build.make CMakeFiles/cmTC_fde33.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fde33.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wmissing-prototypes -std=c++11 -o CMakeFiles/cmTC_fde33.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_fde33
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fde33.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_fde33.dir/src.cxx.o -o cmTC_fde33 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wstrict-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b1945/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b1945.dir/build.make CMakeFiles/cmTC_b1945.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b1945.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wstrict-prototypes -std=c++11 -o CMakeFiles/cmTC_b1945.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_b1945
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1945.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_b1945.dir/src.cxx.o -o cmTC_b1945 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e7750/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e7750.dir/build.make CMakeFiles/cmTC_e7750.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7750.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo -o CMakeFiles/cmTC_e7750.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_e7750
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7750.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_e7750.dir/src.c.o -o cmTC_e7750 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wsuggest-override'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c7138/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c7138.dir/build.make CMakeFiles/cmTC_c7138.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c7138.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wsuggest-override -o CMakeFiles/cmTC_c7138.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_c7138
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7138.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_c7138.dir/src.c.o -o cmTC_c7138 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-delete-non-virtual-dtor'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3680c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3680c.dir/build.make CMakeFiles/cmTC_3680c.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3680c.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-delete-non-virtual-dtor -o CMakeFiles/cmTC_3680c.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_3680c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3680c.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_3680c.dir/src.c.o -o cmTC_3680c 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_832c2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_832c2.dir/build.make CMakeFiles/cmTC_832c2.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_832c2.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args -std=c++11 -o CMakeFiles/cmTC_832c2.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_832c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_832c2.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_832c2.dir/src.cxx.o -o cmTC_832c2 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f244a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f244a.dir/build.make CMakeFiles/cmTC_f244a.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f244a.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_f244a.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_f244a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f244a.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_f244a.dir/src.c.o -o cmTC_f244a 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden  -fvisibility-inlines-hidden'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0c5d2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0c5d2.dir/build.make CMakeFiles/cmTC_0c5d2.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c5d2.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden  -fvisibility-inlines-hidden -o CMakeFiles/cmTC_0c5d2.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_0c5d2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c5d2.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_0c5d2.dir/src.c.o -o cmTC_0c5d2 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-implicit-const-int-float-conversion’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -Wno-implicit-const-int-float-conversion'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a8768/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a8768.dir/build.make CMakeFiles/cmTC_a8768.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a8768.dir/src.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-implicit-const-int-float-conversion -o CMakeFiles/cmTC_a8768.dir/src.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-implicit-const-int-float-conversion’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_a8768
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8768.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_a8768.dir/src.c.o -o cmTC_a8768 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Determining if the _aligned_malloc exist failed with the following output:
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3c126/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3c126.dir/build.make CMakeFiles/cmTC_3c126.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3c126.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -Wno-unused-but-set-variable  -O3 -DNDEBUG  -DNDEBUG -fPIE -o CMakeFiles/cmTC_3c126.dir/CheckSymbolExists.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘_aligned_malloc’ undeclared (first use in this function)
+    8 |   return ((int*)(&_aligned_malloc))[argc];
+      |                   ^~~~~~~~~~~~~~~
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:4:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+    4 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_3c126.dir/build.make:78: CMakeFiles/cmTC_3c126.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_3c126/fast] Error 2
+
+
+File /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <malloc.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _aligned_malloc
+  return ((int*)(&_aligned_malloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_14ce5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_14ce5.dir/build.make CMakeFiles/cmTC_14ce5.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_14ce5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=sgemm_ -O3 -DNDEBUG  -DNDEBUG -fPIE -o CMakeFiles/cmTC_14ce5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_14ce5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14ce5.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=sgemm_ -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_14ce5.dir/CheckFunctionExists.c.o -o cmTC_14ce5 
+/usr/bin/ld: CMakeFiles/cmTC_14ce5.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup.main+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_14ce5.dir/build.make:99: cmTC_14ce5] Error 1
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_14ce5/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f984b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f984b.dir/build.make CMakeFiles/cmTC_f984b.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f984b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=cheev_ -O3 -DNDEBUG  -DNDEBUG -fPIE -o CMakeFiles/cmTC_f984b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f984b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f984b.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=cheev_ -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_f984b.dir/CheckFunctionExists.c.o -o cmTC_f984b  /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -lm -ldl 
+/usr/bin/ld: CMakeFiles/cmTC_f984b.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup.main+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f984b.dir/build.make:102: cmTC_f984b] Error 1
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f984b/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_92b5b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_92b5b.dir/build.make CMakeFiles/cmTC_92b5b.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_92b5b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=cheev_ -O3 -DNDEBUG  -DNDEBUG -fPIE -o CMakeFiles/cmTC_92b5b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_92b5b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92b5b.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=cheev_ -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_92b5b.dir/CheckFunctionExists.c.o -o cmTC_92b5b  /usr/lib/x86_64-linux-gnu/liblapack.so /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -fortranlibs 
+cc: error: unrecognized command-line option ‘-fortranlibs’
+gmake[1]: *** [CMakeFiles/cmTC_92b5b.dir/build.make:103: cmTC_92b5b] Error 1
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_92b5b/fast] Error 2
+
+
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-missing-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_88f82/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_88f82.dir/build.make CMakeFiles/cmTC_88f82.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_88f82.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-missing-prototypes -std=c++11 -o CMakeFiles/cmTC_88f82.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_88f82
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_88f82.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_88f82.dir/src.cxx.o -o cmTC_88f82 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-tautological-undefined-compare’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-tautological-undefined-compare'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_91eb4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_91eb4.dir/build.make CMakeFiles/cmTC_91eb4.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_91eb4.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-tautological-undefined-compare -std=c++11 -o CMakeFiles/cmTC_91eb4.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-tautological-undefined-compare’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_91eb4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91eb4.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_91eb4.dir/src.cxx.o -o cmTC_91eb4 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-shorten-64-to-32’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-shorten-64-to-32'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_af94b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_af94b.dir/build.make CMakeFiles/cmTC_af94b.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_af94b.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-shorten-64-to-32 -std=c++11 -o CMakeFiles/cmTC_af94b.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-shorten-64-to-32’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_af94b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af94b.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_af94b.dir/src.cxx.o -o cmTC_af94b 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-enum-compare-switch’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-enum-compare-switch'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_01fdd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_01fdd.dir/build.make CMakeFiles/cmTC_01fdd.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_01fdd.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-enum-compare-switch -std=c++11 -o CMakeFiles/cmTC_01fdd.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-enum-compare-switch’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_01fdd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01fdd.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_01fdd.dir/src.cxx.o -o cmTC_01fdd 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-inconsistent-missing-override’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-inconsistent-missing-override'
+===== BUILD LOG =====
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_15dd1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_15dd1.dir/build.make CMakeFiles/cmTC_15dd1.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_15dd1.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-inconsistent-missing-override -std=c++11 -o CMakeFiles/cmTC_15dd1.dir/src.cxx.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-inconsistent-missing-override’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_15dd1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15dd1.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_15dd1.dir/src.cxx.o -o cmTC_15dd1 
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_6cce3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6cce3.dir/build.make CMakeFiles/cmTC_6cce3.dir/build
+gmake[1]: Entering directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6cce3.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -fvisibility=hidden  -O3 -DNDEBUG  -DNDEBUG -fPIE -o CMakeFiles/cmTC_6cce3.dir/CheckIncludeFile.c.o -c /home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: sys/videoio.h: No such file or directory
+    1 | #include <sys/videoio.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_6cce3.dir/build.make:78: CMakeFiles/cmTC_6cce3.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/remon-emad/HPC/project/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6cce3/fast] Error 2
+
+
+
