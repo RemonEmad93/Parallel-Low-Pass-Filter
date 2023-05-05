@@ -2,6 +2,7 @@
 (run on linux)
 
 sequential code:
+
     command to compile:
         g++ -I/usr/local/include/opencv4 -o LPF_seq_RGB LPF_seq_RGB.cpp `pkg-config --cflags --libs opencv4`
 
@@ -19,6 +20,7 @@ sequential code:
 
 
 openMP code:
+
     command to compile:
         g++ -I/usr/local/include/opencv4 -fopenmp -o LPF_openMP_RGB LPF_openMP_RGB.cpp `pkg-config --cflags --libs opencv4`
 
@@ -27,9 +29,9 @@ openMP code:
 
     input: 
         image name
-        number of threads
         kernel size
-
+        number of threads
+        
     ouput:
         original image
         filtered image
@@ -37,6 +39,7 @@ openMP code:
 
 
 MPI code:
+
     command to compile:
         mpic++ -I/usr/local/include/opencv4 -o LPF_MPI_RGB LPF_MPI_RGB.cpp `pkg-config --cflags --libs opencv4`
 
