@@ -2,6 +2,14 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "span": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp"
     }
 }

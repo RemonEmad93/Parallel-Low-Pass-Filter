@@ -99,7 +99,9 @@ int main() {
 
     // check that the kernel number entered is odd
     while (true) {
-        if (Ksize % 2 == 1) {
+        if(Ksize < 3){
+            cout << "enter number more than or equal 3";
+        }else if (Ksize % 2 == 1) {
             break;
         } else {
             cout << "the kernel size must be odd number, Enter the kernel size: ";
