@@ -427,3 +427,5 @@ int main() {
     waitKey(0);
     return 0;
 }
+
+//g++ -I/usr/local/include/opencv4 -o LPF_seq_RGB LPF_seq_RGB.cpp `pkg-config --cflags --libs opencv4`

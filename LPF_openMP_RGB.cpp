@@ -125,7 +125,7 @@ int main() {
     double start_time = omp_get_wtime();
 
     // Apply the kernel to each pixel in the image
-    #pragma omp parallel for num_threads(num_threads)
+    #pragma omp parallel for num_threads(num_threads) schedule(guided)
     for (int i = k; i < image.rows - k; i++) {
         for (int j = k; j < image.cols - k; j++) {
             float sum_r = 0;
@@ -160,3 +160,5 @@ int main() {
     waitKey(0);
     return 0;
 }
+
+//g++ -I/usr/local/include/opencv4 -fopenmp -o LPF_openMP_RGB LPF_openMP_RGB.cpp `pkg-config --cflags --libs opencv4`
