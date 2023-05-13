@@ -118,6 +118,10 @@ int main() {
     int k = Ksize / 2;
     Mat kernel = Mat::ones(Ksize, Ksize, CV_32F) / (float)(Ksize * Ksize);
 
+    // border replication
+    Mat paddedImage;
+    copyMakeBorder(image, paddedImage, k, k, k, k, BORDER_REPLICATE);
+
     // Create a copy of the image to hold the blurred image
     Mat blurred_image = image.clone();
 
@@ -125,22 +129,22 @@ int main() {
     double start_time = omp_get_wtime();
 
     // Apply the kernel to each pixel in the image
-    #pragma omp parallel for num_threads(num_threads) schedule(guided)
-    for (int i = k; i < image.rows - k; i++) {
-        for (int j = k; j < image.cols - k; j++) {
+    #pragma omp parallel for num_threads(num_threads)
+    for (int i = k; i < paddedImage.rows + k; i++) {
+        for (int j = k; j < paddedImage.cols + k; j++) {
             float sum_r = 0;
             float sum_g = 0;
             float sum_b = 0;
             for (int x = -k; x <= k; x++) {
                 for (int y = -k; y <= k; y++) {
-                    Vec3b pixel = image.at<Vec3b>(i + x, j + y);
+                    Vec3b pixel = paddedImage.at<Vec3b>(i + x, j + y);
                     sum_b += pixel[0] * kernel.at<float>(k + x, k + y);
                     sum_g += pixel[1] * kernel.at<float>(k + x, k + y);
                     sum_r += pixel[2] * kernel.at<float>(k + x, k + y);
                 }
             }
             Vec3b new_pixel(sum_b, sum_g, sum_r);
-            blurred_image.at<Vec3b>(i, j) = new_pixel;
+            blurred_image.at<Vec3b>(i-k, j-k) = new_pixel;
         }
     }
 
