@@ -44,10 +44,8 @@ MPI code:
         mpic++ -I/usr/local/include/opencv4 -o LPF_MPI_RGB LPF_MPI_RGB.cpp `pkg-config --cflags --libs opencv4`
 
     command to run:
-        mpirun -np no._of_threads ./LPF_MPI_RGB
-
-    input: 
+        mpirun -np no._of_threads ./LPF_MPI_RGB imageName kernelSize
         
-
     ouput:
-        
+        filtered image 
+        duration of execution
