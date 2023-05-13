@@ -1,178 +1,257 @@
-#include <opencv2/opencv.hpp>
-#include <iostream>
-#include <string>
-#include <chrono>
 #include <mpi.h>
+#include <opencv2/opencv.hpp>
 
-using namespace std;
 using namespace cv;
-using namespace chrono;
 
-int main(int argc, char* argv[]) {
+void blurImage(Mat& image, int kernelSize, Mat& kernel)
+{
+    Mat blurred_Image=image.clone();
+    int padding = kernelSize / 2;
+    Mat paddedImage;
+    copyMakeBorder(image, paddedImage, padding, padding, padding, padding, BORDER_REPLICATE);
 
-    // Initialize MPI
-    MPI_Init(&argc, &argv);
+    int rows = image.rows;
+    int cols = image.cols;
+    int channels = image.channels();
 
-    // Get the rank and size of the MPI processes
-    int rank, size;
+    // Apply the kernel to each pixel in the image
+    for (int i = padding; i < image.rows ; i++) {
+        for (int j = padding; j < image.cols -padding; j++) {
+            float sum_r = 0;
+            float sum_g = 0;
+            float sum_b = 0;
+            for (int x = -padding; x <= padding; x++) {
+                for (int y = -padding; y <= padding; y++) {
+                    Vec3b pixel = blurred_Image.at<Vec3b>(i + x, j + y);
+                    sum_b += pixel[0] * kernel.at<float>(padding + x, padding+ y);
+                    sum_g += pixel[1] * kernel.at<float>(padding + x, padding+ y);
+                    sum_r += pixel[2] * kernel.at<float>(padding + x, padding+ y);
+                }
+            }
+            Vec3b new_pixel(sum_b, sum_g, sum_r);
+            image.at<Vec3b>(i, j) = new_pixel;
+        }
+    }
+}
+
+int main(int argc, char** argv)
+{
+    MPI_Init(NULL, NULL);
+
+    int numProcesses, rank;
+    MPI_Comm_size(MPI_COMM_WORLD, &numProcesses);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    // Ask user for image path (only rank 0 does this)
-    string imagePath;
-    if (rank == 0) {
-        cout << "Enter the image name: ";
-        cin >> imagePath;
+    if (argc < 3) {
+        if (rank == 0) {
+            std::cerr << "Usage: " << argv[0] << " <image_path> <kernel_size>" << std::endl;
+        }
+        MPI_Finalize();
+        return 0;
     }
 
-    // Broadcast the size of imagePath to all processes
-    int imagePathSize = 0;
+    const char* imagePath = argv[1];
+    int kernelSize = atoi(argv[2]);
+
+    Mat kernel = Mat::ones(kernelSize, kernelSize, CV_32F) / (float)(kernelSize * kernelSize);
+
+    Mat image, paddedImage;
+
     if (rank == 0) {
-        imagePathSize = imagePath.size();
-    }
-    MPI_Bcast(&imagePathSize, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    // Resize the imagePath string on each process to accommodate the received size
-    imagePath.resize(imagePathSize);
-
-    // Broadcast the imagePath string to all processes
-    MPI_Bcast(&imagePath[0], imagePathSize, MPI_CHAR, 0, MPI_COMM_WORLD);
-
-    // Load the image (only rank 0 does this)
-    Mat image;
-    if (rank == 0) {
-        image = imread(imagePath);
-
-        // Check the entered image path
+        // Read the image
+        image = imread(imagePath, IMREAD_COLOR);
         if (image.empty()) {
-            cerr << "Error: Could not read image file." << endl;
+            std::cerr << "Failed to read the image: " << imagePath << std::endl;
             MPI_Finalize();
-            return 1;
+            return 0;
         }
     }
-
-    // Broadcast the image dimensions to all processes
-    int imageRows, imageCols;
-    if (rank == 0) {
-        imageRows = image.rows;
-        imageCols = image.cols;
-    }
-    MPI_Bcast(&imageRows, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    MPI_Bcast(&imageCols, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    // Ask user for kernel size (only rank 0 does this)
-    int Ksize;
-    if (rank == 0) {
-        cout << "Enter the kernel size: ";
-        cin >> Ksize;
-
-        // Check that the kernel number entered is odd
-        while (Ksize < 3 || Ksize % 2 != 1) {
-            cout << "The kernel size must be an odd number greater than or equal to 3. Enter the kernel size: ";
-            cin >> Ksize;
-        }
-    }
-
-    // Broadcast the kernel size to all processes
-    MPI_Bcast(&Ksize, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    // // Ask user for number of threads to use (only rank 0 does this)
-    // int num_threads;
-    // if (rank == 0) {
-    //     cout << "Enter the number of threads to use: ";
-    //     cin >> num_threads;
-    // }
-
-    // // Broadcast the number of threads to all processes
-    // MPI_Bcast(&num_threads, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    // Create a kernel for blurring (only rank 0 does this)
-    Mat kernel;
-    if (rank == 0) {
-        int k = Ksize / 2;
-        kernel = Mat::ones(Ksize, Ksize, CV_32F) / (float)(Ksize * Ksize);
-    }
-
-        // Calculate the chunk size for each process
-    int chunkSize = (imageRows - Ksize + 1) / size;
-    int remainder = (imageRows - Ksize + 1) % size;
-    int startRow = rank * chunkSize;
-    int endRow = startRow + chunkSize - 1;
-
-    // Adjust the endRow for the last process
-    if (rank == size - 1) {
-        endRow += remainder;
-    }
-
-    // Create a copy of the image chunk to hold the blurred image chunk
-    Mat blurred_image = image(Rect(0, startRow, imageCols, endRow - startRow + 1)).clone();
-
-    // Start the timer (only rank 0 does this)
     double start_time;
     if (rank == 0) {
         start_time = MPI_Wtime();
     }
+    // Broadcast image size information to all processes
+    int rows = 0, cols = 0;
+    if (rank == 0) {
+        rows = image.rows;
+        cols = image.cols;
+    }
+    MPI_Bcast(&rows, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Bcast(&cols, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    // Apply the kernel to each pixel in the image chunk
-    for (int i = 0; i < blurred_image.rows; i++) {
-        for (int j = Ksize / 2; j < blurred_image.cols - Ksize / 2; j++) {
+    // Split the image into chunks and distribute the rows among processes
+    int chunkSize = rows / numProcesses;  // ceil(rows / numProcesses)
+    int extraRows = rows % numProcesses;
+    
+    int paddingSize = kernelSize / 2;
+    int shadowSize = kernelSize / 2;
+    int k = kernelSize / 2;
+    
+    float *flattened_image, *flattened_image_chunk;
+    if (rank == 0)
+    {
+        // Allocate memory for the padded image
+        copyMakeBorder(image, paddedImage, paddingSize, paddingSize, paddingSize, paddingSize, BORDER_REPLICATE);
+        flattened_image = new float[paddedImage.rows * paddedImage.cols * paddedImage.channels()];
+
+        // Flatten the image
+        for(int i = 0; i < paddedImage.rows; i++)
+        {
+            for(int j = 0; j < paddedImage.cols; j++)
+            {
+                for(int k = 0; k < paddedImage.channels(); k++)
+                {
+                    flattened_image[(i * paddedImage.cols * paddedImage.channels()) + (j * paddedImage.channels()) + k] = paddedImage.at<Vec3b>(i, j)[k];
+                }
+            }
+        }
+
+        image.deallocate();
+    }
+
+    // Allocate memory for the received chunk
+    image.create(chunkSize + (2* shadowSize), cols + (2 * paddingSize), CV_8UC3);
+    flattened_image_chunk = new float[image.rows * image.cols * image.channels()];
+
+    // Scatter the flattened image to all processes
+	int *counts = 0, *displacements = 0;
+	if (rank == 0)
+	{
+		counts = new int[numProcesses];
+		displacements = new int[numProcesses];
+
+		// Calculate the counts and displacement values
+		for (int i = 0; i < numProcesses; i++)
+		{
+			counts[i] = (chunkSize + 2 * shadowSize) * (cols + 2 * paddingSize) * 3;
+            displacements[i] = i * (chunkSize * (cols + 2 * paddingSize) * 3);
+		}
+	}
+
+    // Scatter the flattened image
+	MPI_Scatterv(flattened_image, counts, displacements, MPI_FLOAT, flattened_image_chunk, (chunkSize + 2 * shadowSize) * (cols + 2 * paddingSize) * 3, MPI_FLOAT, 0, MPI_COMM_WORLD);
+
+    // Convert the flattened image chunk to a Mat
+    for(int i = 0; i < image.rows; i++)
+    {
+        for(int j = 0; j < image.cols; j++)
+        {
+            Vec3b new_pixel(0, 0, 0);
+            for(int k = 0; k < image.channels(); k++)
+            {
+                new_pixel[k] = flattened_image_chunk[(i * image.cols * image.channels()) + (j * image.channels()) + k];
+            }
+            image.at<Vec3b>(i, j) = new_pixel;
+        }
+    }
+
+    // Apply the filter
+    Mat filteredChunk;
+    filteredChunk.create(chunkSize, cols, CV_8UC3);
+    for (int i = shadowSize; i < image.rows - shadowSize; i++) {
+        for (int j = shadowSize; j < image.cols - shadowSize; j++) {
             float sum_r = 0;
             float sum_g = 0;
             float sum_b = 0;
-            for (int x = -Ksize / 2; x <= Ksize / 2; x++) {
-                for (int y = -Ksize / 2; y <= Ksize / 2; y++) {
-                    Vec3b pixel = image.at<Vec3b>(startRow + i + x, j + y);
-                    sum_b += pixel[0] * kernel.at<float>(Ksize / 2 + x, Ksize / 2 + y);
-                    sum_g += pixel[1] * kernel.at<float>(Ksize / 2 + x, Ksize / 2 + y);
-                    sum_r += pixel[2] * kernel.at<float>(Ksize / 2 + x, Ksize / 2 + y);
+            for (int x = -k; x <= k; x++) {
+                for (int y = -k; y <= k; y++) {
+                    Vec3b pixel = image.at<Vec3b>(i + x, j + y);
+                    sum_b += pixel[0] * kernel.at<float>(k + x, k + y);
+                    sum_g += pixel[1] * kernel.at<float>(k + x, k + y);
+                    sum_r += pixel[2] * kernel.at<float>(k + x, k + y);
                 }
             }
             Vec3b new_pixel(sum_b, sum_g, sum_r);
-            blurred_image.at<Vec3b>(i, j) = new_pixel;
+            filteredChunk.at<Vec3b>(i-k, j-k) = new_pixel;
         }
     }
 
 
-    // Gather the blurred image chunks from all processes to reconstruct the complete blurred image (only rank 0 does this)
-    if (rank == 0) {
-        vector<Mat> blurred_chunks(size);
-        blurred_chunks[0] = blurred_image;
-        for (int i = 1; i < size; i++) {
-            blurred_chunks[i] = Mat(chunkSize, imageCols, CV_8UC3);
-            MPI_Recv(blurred_chunks[i].data, blurred_chunks[i].total() * blurred_chunks[i].elemSize(), MPI_BYTE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    // Apply the filter to the rows that could not be sent to other processes (due to division of rows by numProcesses not being perfect)
+    Mat extraChunk;
+    int extraStartRow = chunkSize * numProcesses;
+    if(rank == 0)
+    {
+        extraChunk.create(extraRows, cols, CV_8UC3);
+        for(int i = 0; i < extraRows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                float sum_r = 0;
+                float sum_g = 0;
+                float sum_b = 0;
+                for (int x = -k; x <= k; x++) {
+                    for (int y = -k; y <= k; y++) {
+                        Vec3b pixel = paddedImage.at<Vec3b>(extraStartRow + i + x, j + y);
+                        sum_b += pixel[0] * kernel.at<float>(k + x, k + y);
+                        sum_g += pixel[1] * kernel.at<float>(k + x, k + y);
+                        sum_r += pixel[2] * kernel.at<float>(k + x, k + y);
+                    }
+                }
+                Vec3b new_pixel(sum_b, sum_g, sum_r);
+                extraChunk.at<Vec3b>(i, j) = new_pixel;
+            }
+        }
+    }
+
+    // Convert the filtered chunk to a flattened array
+    float *flattened_filtered_chunk = new float[filteredChunk.rows * filteredChunk.cols * filteredChunk.channels()];
+    for(int i = 0; i < filteredChunk.rows; i++)
+    {
+        for(int j = 0; j < filteredChunk.cols; j++)
+        {
+            for(int k = 0; k < filteredChunk.channels(); k++)
+            {
+                flattened_filtered_chunk[(i * filteredChunk.cols * filteredChunk.channels()) + (j * filteredChunk.channels()) + k] = filteredChunk.at<Vec3b>(i, j)[k];
+            }
+        }
+    }
+
+    if(rank == 0)
+    {
+        image.deallocate();
+        image.create(rows, cols, CV_8UC3);
+    }
+
+    // // Gather the filtered chunks
+    MPI_Gather(flattened_filtered_chunk, chunkSize * cols * 3, MPI_FLOAT, flattened_image, chunkSize * cols * 3, MPI_FLOAT, 0, MPI_COMM_WORLD);
+
+    // Convert the flattened image to a Mat
+    if(rank == 0)
+    {
+        for(int i = 0; i < image.rows; i++)
+        {
+            for(int j = 0; j < image.cols; j++)
+            {
+                Vec3b new_pixel(0, 0, 0);
+                for(int k = 0; k < image.channels(); k++)
+                {
+                    new_pixel[k] = flattened_image[(i * image.cols * image.channels()) + (j * image.channels()) + k];
+                }
+                image.at<Vec3b>(i, j) = new_pixel;
+            }
         }
 
-        // Concatenate the blurred image chunks
-        vconcat(blurred_chunks, blurred_image);
-    }
-    else {
-        // Send the blurred image chunk to rank 0
-        MPI_Send(blurred_image.data, blurred_image.total() * blurred_image.elemSize(), MPI_BYTE, 0, 0, MPI_COMM_WORLD);
-    }
+        for (size_t i = 0; i < extraRows; i++)
+        {
+            for (size_t j = 0; j < image.cols; j++)
+            {
+                image.at<Vec3b>(extraStartRow + i, j) = extraChunk.at<Vec3b>(i, j);
+            }
+        }
+        
+        double end_time = MPI_Wtime();
+        std::cout << "Execution time: " << end_time - start_time << " seconds\n";
+        
+        
+        imshow("Blurred Image", image);
 
-    // End the timer (only rank 0 does this)
-    double end_time;
-    if (rank == 0) {
-        end_time = MPI_Wtime();
-    }
-
-    // Rank 0 displays the original and blurred images and prints the execution time
-    if (rank == 0) {
-        // Display the images
-        namedWindow("Original image", WINDOW_NORMAL);
-        namedWindow("Filtered image", WINDOW_NORMAL);
-        imshow("Original image", image);
-        imshow("Filtered image", blurred_image);
-
-        // Show the execution time in seconds
-        cout << "Execution time: " << end_time - start_time << " seconds\n";
+        waitKey(0);
     }
 
-    // Wait for key press (all processes)
-    waitKey(0);
+    
 
-    // Finalize MPI
-    MPI_Finalize();
-
-    return 0;
+MPI_Finalize();
+return 0;
 }
+
