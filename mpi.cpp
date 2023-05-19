@@ -3,36 +3,36 @@
 
 using namespace cv;
 
-void blurImage(Mat& image, int kernelSize, Mat& kernel)
-{
-    Mat blurred_Image=image.clone();
-    int padding = kernelSize / 2;
-    Mat paddedImage;
-    copyMakeBorder(image, paddedImage, padding, padding, padding, padding, BORDER_REPLICATE);
+// void blurImage(Mat& image, int kernelSize, Mat& kernel)
+// {
+//     Mat blurred_Image=image.clone();
+//     int padding = kernelSize / 2;
+//     Mat paddedImage;
+//     copyMakeBorder(image, paddedImage, padding, padding, padding, padding, BORDER_REPLICATE);
 
-    int rows = image.rows;
-    int cols = image.cols;
-    int channels = image.channels();
+//     int rows = image.rows;
+//     int cols = image.cols;
+//     int channels = image.channels();
 
-    // Apply the kernel to each pixel in the image
-    for (int i = padding; i < image.rows ; i++) {
-        for (int j = padding; j < image.cols -padding; j++) {
-            float sum_r = 0;
-            float sum_g = 0;
-            float sum_b = 0;
-            for (int x = -padding; x <= padding; x++) {
-                for (int y = -padding; y <= padding; y++) {
-                    Vec3b pixel = blurred_Image.at<Vec3b>(i + x, j + y);
-                    sum_b += pixel[0] * kernel.at<float>(padding + x, padding+ y);
-                    sum_g += pixel[1] * kernel.at<float>(padding + x, padding+ y);
-                    sum_r += pixel[2] * kernel.at<float>(padding + x, padding+ y);
-                }
-            }
-            Vec3b new_pixel(sum_b, sum_g, sum_r);
-            image.at<Vec3b>(i, j) = new_pixel;
-        }
-    }
-}
+//     // Apply the kernel to each pixel in the image
+//     for (int i = padding; i < image.rows ; i++) {
+//         for (int j = padding; j < image.cols -padding; j++) {
+//             float sum_r = 0;
+//             float sum_g = 0;
+//             float sum_b = 0;
+//             for (int x = -padding; x <= padding; x++) {
+//                 for (int y = -padding; y <= padding; y++) {
+//                     Vec3b pixel = blurred_Image.at<Vec3b>(i + x, j + y);
+//                     sum_b += pixel[0] * kernel.at<float>(padding + x, padding+ y);
+//                     sum_g += pixel[1] * kernel.at<float>(padding + x, padding+ y);
+//                     sum_r += pixel[2] * kernel.at<float>(padding + x, padding+ y);
+//                 }
+//             }
+//             Vec3b new_pixel(sum_b, sum_g, sum_r);
+//             image.at<Vec3b>(i, j) = new_pixel;
+//         }
+//     }
+// }
 
 int main(int argc, char** argv)
 {
