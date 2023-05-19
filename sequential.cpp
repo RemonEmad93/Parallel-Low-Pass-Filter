@@ -57,8 +57,8 @@ int main() {
     auto start_time = high_resolution_clock::now();
 
     // Apply the kernel to each pixel in the image
-    for (int i = k; i < paddedImage.rows - k; i++) {
-        for (int j = k; j < paddedImage.cols - k; j++) {
+    for (int i = k; i <= paddedImage.rows - k; i++) {
+        for (int j = k; j <= paddedImage.cols - k; j++) {
             float sum_r = 0;
             float sum_g = 0;
             float sum_b = 0;

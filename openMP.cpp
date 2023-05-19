@@ -62,8 +62,8 @@ int main() {
 
     // Apply the kernel to each pixel in the image
     #pragma omp parallel for num_threads(num_threads) 
-    for (int i = k; i <= paddedImage.rows + k; i++) {
-        for (int j = k; j <= paddedImage.cols + k; j++) {
+    for (int i = k; i <= paddedImage.rows - k; i++) {
+        for (int j = k; j <= paddedImage.cols - k; j++) {
             float sum_r = 0;
             float sum_g = 0;
             float sum_b = 0;
